@@ -57,10 +57,6 @@ class App extends React.Component<AppProps, AppState> {
     this.props.sdk.entry.fields.description.setValue(event.target.value);
   };
 
-  // onPositionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   this.props.sdk.entry.fields.position.setValue(event.target.value);
-  // };
-
   onFindingNearbyTitleChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -90,13 +86,7 @@ class App extends React.Component<AppProps, AppState> {
           <SectionHeading>Title</SectionHeading>
           <TextInput onChange={this.onTitleChangeHandler} value={this.state.title} />
           <SectionHeading>Body</SectionHeading>
-          <TextInput onChange={this.onDescriptionChangeHandler} value={this.state.description} />
-          <SectionHeading>Position</SectionHeading>
-          {/* <TextField onChange={this.onPositionChangeHandler} value={this.state.position} /> */}
-          <SectionHeading>Marquee Image</SectionHeading>
-          {/* <Asset src={this.state.marqueeImage} type='image' /> */}
-          <SectionHeading>Footer Copy</SectionHeading>
-          {/* <TextInput onChange={this.onTitleChangeHandler} value={this.state.footerCopy} /> */}
+          <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} />
           <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
