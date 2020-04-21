@@ -26,7 +26,7 @@
     {
       "id": "position",
       "name": "Position",
-      "type": "Symbol",
+      "type": "Integer",
       "localized": false,
       "required": true,
       "validations": [
@@ -49,6 +49,16 @@
       "disabled": false,
       "omitted": false,
       "linkType": "Asset"
+    },
+    {
+      "id": "footerCopy",
+      "name": "Mobile Footer Tile Copy",
+      "type": "Symbol",
+      "localized": true,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
     },
     {
       "id": "nearMeMode",

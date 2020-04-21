@@ -95,6 +95,8 @@ class App extends React.Component<AppProps, AppState> {
           <TextField onChange={this.onPositionChangeHandler} value={this.state.position} />
           <SectionHeading>Marquee Image</SectionHeading>
           <Asset src={this.state.marqueeImage} type='image' />
+          <SectionHeading>Footer Copy</SectionHeading>
+          <TextInput onChange={this.onTitleChangeHandler} value={this.state.footerCopy} />
           <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
