@@ -80,8 +80,8 @@
       "omitted": false
     },
     {
-      "id": "hasAbstract",
-      "name": "has abstract",
+      "id": "nearMode",
+      "name": "Is Near Mode",
       "type": "Boolean",
       "localized": false,
       "required": true,
@@ -90,8 +90,18 @@
       "omitted": false
     },
     {
-      "id": "abstract",
-      "name": "abstract",
+      "id": "findingNearbyTitle",
+      "name": "Finding Nearby Title",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "findingNearbyDescription",
+      "name": "Finding Nearby Description",
       "type": "Text",
       "localized": false,
       "required": false,

@@ -3,7 +3,13 @@
 This is a [entry editor extension](https://www.contentful.com/developers/docs/extensibility/ui-extensions/) for the conditional field in the Floors content type of the AMMP app.
 https://www.contentful.com/developers/docs/tutorials/general/uiextensions-entry/
 
-Requires the Contentful CLI:
+
+The sample extension can be used as a starting point:
+
+https://github.com/contentful/extensions/tree/master/samples/entry-editor-extension/
+
+
+Creating a UI extension requires the Contentful CLI:
 
 `npm install -g contentful-cli`
 
@@ -23,11 +29,11 @@ To use an environment within a space:
 
 `contentful space use --environment-id (Environemnt name)`
 
-Push a development version to your space 
+Next, push a development version to your space and create a build folder
 
 `npm run start`
 
-Be sure to add the extension to Contentful.
+Be sure to add the extension to Contentful, and make sure the fields match the content type json.
 
 `Settings -> Extensions -> Add Extension -> Install from Github` -> add a link to the extensions.json file
 
