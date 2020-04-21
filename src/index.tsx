@@ -7,7 +7,7 @@ import {
   Card,
   DisplayText,
   Paragraph,
-  Asset,
+  AssetCard,
   SectionHeading,
   FieldGroup,
   RadioButtonField,
@@ -83,7 +83,8 @@ class App extends React.Component<AppProps, AppState> {
 
   render() {
     // const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
-
+    console.log('this.state.marqueeImage :', this.state.marqueeImage);
+    console.log('this.state.position :', this.state.position);
     return (
       <div className="f36-margin--l">
         <Typography>
@@ -103,7 +104,7 @@ class App extends React.Component<AppProps, AppState> {
             value={this.state.position}
           />
           <SectionHeading>Marquee Image</SectionHeading>
-          <Asset src={this.state.marqueeImage} type="image" />
+          <AssetCard src={this.state.marqueeImage} type="image" />
           <SectionHeading>Footer Copy</SectionHeading>
           <TextInput
             onChange={this.onTitleChangeHandler}
