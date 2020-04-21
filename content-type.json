@@ -24,22 +24,6 @@
       "omitted": false
     },
     {
-      "id": "position",
-      "name": "Position",
-      "type": "Integer",
-      "localized": false,
-      "required": true,
-      "validations": [
-        {
-          "range": {
-            "min": 1
-          }
-        }
-      ],
-      "disabled": false,
-      "omitted": false
-    },
-    {
       "id": "footerCopy",
       "name": "Mobile Footer Tile Copy",
       "type": "Symbol",
