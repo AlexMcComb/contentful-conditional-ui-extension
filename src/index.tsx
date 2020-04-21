@@ -78,7 +78,7 @@ class App extends React.Component<AppProps, AppState> {
   };
 
   render() {
-    const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
+    // const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
 
     return (
       <div className="f36-margin--l">
@@ -91,7 +91,7 @@ class App extends React.Component<AppProps, AppState> {
           <FieldGroup row={false}>
             <RadioButtonField
               labelText="Yes"
-              checked={this.state.nearMeMode || floorTitleIncludesNear}
+              checked={this.state.nearMeMode}
               value="yes"
               onChange={this.onNearMeModeChangeHandler}
               name="nearMeModeOption"
