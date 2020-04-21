@@ -57,9 +57,9 @@ class App extends React.Component<AppProps, AppState> {
     this.props.sdk.entry.fields.description.setValue(event.target.value);
   };
 
-  onPositionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.sdk.entry.fields.position.setValue(event.target.value);
-  };
+  // onPositionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   this.props.sdk.entry.fields.position.setValue(event.target.value);
+  // };
 
   onFindingNearbyTitleChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
