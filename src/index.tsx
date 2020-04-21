@@ -14,7 +14,7 @@ import {
 import { init, EditorExtensionSDK } from "contentful-ui-extensions-sdk";
 import "@contentful/forma-36-react-components/dist/styles.css";
 import "@contentful/forma-36-fcss";
-import "./index.css";
+// import "./index.css";
 
 interface AppProps {
   sdk: EditorExtensionSDK;
