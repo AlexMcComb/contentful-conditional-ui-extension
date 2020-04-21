@@ -1,6 +1,7 @@
 # Entry editor extension
 
 This is a [entry editor extension](https://www.contentful.com/developers/docs/extensibility/ui-extensions/) for the conditional field in the Floors content type of the AMMP app.
+https://www.contentful.com/developers/docs/tutorials/general/uiextensions-entry/
 
 Requires the Contentful CLI:
 
@@ -25,6 +26,10 @@ To use an environment within a space:
 Push a development version to your space 
 
 `npm run start`
+
+Be sure to add the extension to Contentful.
+
+`Settings -> Extensions -> Add Extension -> Install from Github` -> add a link to the extensions.json file
 
 It uses a boolean value to toggle visible of a field `abstract` so an editor can choose if this field is needed or not.
 
