@@ -24,7 +24,34 @@
       "omitted": false
     },
     {
-      "id": "nearMode",
+      "id": "position",
+      "name": "Position",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "range": {
+            "min": 1
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "marqueeImage",
+      "name": "Marquee Image",
+      "type": "Link",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "nearMeMode",
       "name": "Is Near Mode",
       "type": "Boolean",
       "localized": false,

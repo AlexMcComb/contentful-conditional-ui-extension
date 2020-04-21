@@ -2,10 +2,12 @@ import * as React from "react";
 import { render } from "react-dom";
 import {
   TextInput,
+  TextField,
   Textarea,
   Card,
   DisplayText,
   Paragraph,
+  Asset,
   SectionHeading,
   FieldGroup,
   RadioButtonField,
@@ -14,7 +16,7 @@ import {
 import { init, EditorExtensionSDK } from "contentful-ui-extensions-sdk";
 import "@contentful/forma-36-react-components/dist/styles.css";
 import "@contentful/forma-36-fcss";
-// import "./index.css";
+import "./index.css";
 
 interface AppProps {
   sdk: EditorExtensionSDK;
@@ -23,11 +25,10 @@ interface AppProps {
 interface AppState {
   title: string;
   description?: string;
-  // position: number;
-  // marqueeImage: string;
-  // footerCopy?: string;
-  // nearMeMode: string;
-  nearMode: boolean;
+  position: number;
+  marqueeImage: string;
+  footerCopy?: string;
+  nearMeMode: boolean;
   findingNearbyTitle?: string;
   findingNearbyDescription?: string;
 }
@@ -39,11 +40,10 @@ class App extends React.Component<AppProps, AppState> {
     this.state = {
       title: props.sdk.entry.fields.title.getValue(),
       description: props.sdk.entry.fields.description.getValue(),
-      // position: props.sdk.entry.fields.position.getValue(),
-      // marqueeImage: props.sdk.entry.fields.marqueeImage.getValue(),
-      // footerCopy: props.sdk.entry.fields.footerCopy.getValue(),
-      // nearMeMode: props.sdk.entry.fields.nearMeMode.getValue(),
-      nearMode: props.sdk.entry.fields.nearMode.getValue(),
+      position: props.sdk.entry.fields.position.getValue(),
+      marqueeImage: props.sdk.entry.fields.marqueeImage.getValue(),
+      footerCopy: props.sdk.entry.fields.footerCopy.getValue(),
+      nearMeMode: props.sdk.entry.fields.nearMeMode.getValue(),
       findingNearbyTitle: props.sdk.entry.fields.findingNearbyTitle.getValue(),
       findingNearbyDescription: props.sdk.entry.fields.findingNearbyDescription.getValue(),
     };
@@ -55,6 +55,10 @@ class App extends React.Component<AppProps, AppState> {
 
   onDescriptionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.props.sdk.entry.fields.description.setValue(event.target.value);
+  };
+
+  onPositionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.sdk.entry.fields.position.setValue(event.target.value);
   };
 
   onFindingNearbyTitleChangeHandler = (
@@ -71,43 +75,47 @@ class App extends React.Component<AppProps, AppState> {
     );
   };
 
-  onNearModeChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const nearMode = event.target.value === "yes";
-    this.setState({ nearMode });
-    this.props.sdk.entry.fields.nearMode.setValue(nearMode);
+  onNearMeModeChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const nearMeMode = event.target.value === "yes";
+    this.setState({ nearMeMode });
+    this.props.sdk.entry.fields.nearMeMode.setValue(nearMeMode);
   };
 
   render() {
+    const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
+
     return (
       <div className="f36-margin--l">
         <Typography>
-          <DisplayText>Entry extension demo</DisplayText>
-          <Paragraph>This demo uses a single UI Extension to render all UI for an entry.</Paragraph>
           <SectionHeading>Title</SectionHeading>
           <TextInput onChange={this.onTitleChangeHandler} value={this.state.title} />
           <SectionHeading>Body</SectionHeading>
-          <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} />
+          <TextInput onChange={this.onDescriptionChangeHandler} value={this.state.description} />
+          <SectionHeading>Position</SectionHeading>
+          <TextField onChange={this.onPositionChangeHandler} value={this.state.position} />
+          <SectionHeading>Marquee Image</SectionHeading>
+          <Asset src={this.state.marqueeImage} type='image' />
           <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
               labelText="Yes"
-              checked={this.state.nearMode}
+              checked={this.state.nearMeMode || floorTitleIncludesNear}
               value="yes"
-              onChange={this.onNearModeChangeHandler}
-              name="nearModeOption"
+              onChange={this.onNearMeModeChangeHandler}
+              name="nearMeModeOption"
               id="yesCheckbox"
             />
             <RadioButtonField
               labelText="No"
-              checked={!this.state.nearMode}
+              checked={!this.state.nearMeMode}
               value="no"
-              onChange={this.onNearModeChangeHandler}
-              name="nearModeOption"
+              onChange={this.onNearMeModeChangeHandler}
+              name="nearMeModeOption"
               id="noCheckbox"
             />
           </FieldGroup>
         </Typography>
-        {this.state.nearMode && (
+        {this.state.nearMeMode && (
           <Typography>
             <SectionHeading>Finding Nearby Title</SectionHeading>
             <TextInput

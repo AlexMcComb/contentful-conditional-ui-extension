@@ -37,6 +37,8 @@ To create the final version make sure to run:
 
 `npm run build`
 
+Make sure the index.html in the build folder is filled out with all contents of the app, not just a plain html file
+
 Be sure to add the extension to Contentful, and make sure the fields match the content type json.
 
 `Settings -> Extensions -> Add Extension -> Install from Github` -> add a link to the extensions.json file
