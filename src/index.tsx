@@ -21,8 +21,8 @@ interface AppProps {
 }
 
 interface AppState {
-  // title: string;
-  // description?: string;
+  title: string;
+  description?: string;
   // position: number;
   // marqueeImage: string;
   // footerCopy?: string;
@@ -37,8 +37,8 @@ class App extends React.Component<AppProps, AppState> {
     super(props);
 
     this.state = {
-      // title: props.sdk.entry.fields.title.getValue(),
-      // description: props.sdk.entry.fields.description.getValue(),
+      title: props.sdk.entry.fields.title.getValue(),
+      description: props.sdk.entry.fields.description.getValue(),
       // position: props.sdk.entry.fields.position.getValue(),
       // marqueeImage: props.sdk.entry.fields.marqueeImage.getValue(),
       // footerCopy: props.sdk.entry.fields.footerCopy.getValue(),
@@ -49,13 +49,13 @@ class App extends React.Component<AppProps, AppState> {
     };
   }
 
-  // onTitleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   this.props.sdk.entry.fields.title.setValue(event.target.value);
-  // };
+  onTitleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.sdk.entry.fields.title.setValue(event.target.value);
+  };
 
-  // onDescriptionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   this.props.sdk.entry.fields.description.setValue(event.target.value);
-  // };
+  onDescriptionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.sdk.entry.fields.description.setValue(event.target.value);
+  };
 
   onFindingNearbyTitleChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -81,13 +81,13 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <div className="f36-margin--l">
         <Typography>
-          {/* <DisplayText>Entry extension demo</DisplayText>
+          <DisplayText>Entry extension demo</DisplayText>
           <Paragraph>This demo uses a single UI Extension to render all UI for an entry.</Paragraph>
           <SectionHeading>Title</SectionHeading>
           <TextInput onChange={this.onTitleChangeHandler} value={this.state.title} />
           <SectionHeading>Body</SectionHeading>
-          <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} /> */}
-          <SectionHeading>Is Near Me Mode?</SectionHeading>
+          <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} />
+          {/* <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
               labelText="Yes"
@@ -105,7 +105,7 @@ class App extends React.Component<AppProps, AppState> {
               name="nearModeOption"
               id="noCheckbox"
             />
-          </FieldGroup>
+          </FieldGroup>*/}
         </Typography>
         {this.state.nearMode && (
           <Typography>

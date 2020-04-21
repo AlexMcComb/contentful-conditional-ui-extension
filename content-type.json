@@ -24,62 +24,6 @@
       "omitted": false
     },
     {
-      "id": "position",
-      "name": "Position",
-      "type": "Integer",
-      "localized": false,
-      "required": true,
-      "validations": [
-        {
-          "range": {
-            "min": 1
-          }
-        }
-      ],
-      "disabled": false,
-      "omitted": false
-    },
-    {
-      "id": "marqueeImage",
-      "name": "Marquee Image",
-      "type": "Link",
-      "localized": false,
-      "required": true,
-      "validations": [],
-      "disabled": false,
-      "omitted": false,
-      "linkType": "Asset"
-    },
-    {
-      "id": "footerCopy",
-      "name": "Mobile Footer Tile Copy",
-      "type": "Symbol",
-      "localized": true,
-      "required": false,
-      "validations": [],
-      "disabled": false,
-      "omitted": false
-    },
-    {
-      "id": "nearMeMode",
-      "name": "Near Me Mode",
-      "type": "Symbol",
-      "localized": false,
-      "required": false,
-      "validations": [
-        {
-          "unique": true
-        },
-        {
-          "in": [
-            "Is near mode"
-          ]
-        }
-      ],
-      "disabled": false,
-      "omitted": false
-    },
-    {
       "id": "nearMode",
       "name": "Is Near Mode",
       "type": "Boolean",
