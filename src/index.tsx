@@ -85,7 +85,7 @@ class App extends React.Component<AppProps, AppState> {
     // const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
 
     return (
-      <div className="f36-margin--l">
+      <div className="f36-margin--l test">
         {/* <Typography>
           <SectionHeading>Title</SectionHeading>
           <TextInput
@@ -109,7 +109,7 @@ class App extends React.Component<AppProps, AppState> {
             onChange={this.onTitleChangeHandler}
             value={this.state.footerCopy}
           /> */}
-           <Typography>
+           <Typography className='near-me-container'>
           <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
