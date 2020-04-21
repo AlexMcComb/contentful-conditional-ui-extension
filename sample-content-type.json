@@ -1,0 +1,129 @@
+{
+  "name": "Floor",
+  "description": "Museum floor",
+  "displayField": "title",
+  "fields": [
+    {
+      "id": "title",
+      "name": "Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "position",
+      "name": "Position",
+      "type": "Integer",
+      "localized": false,
+      "required": true,
+      "validations": [
+        {
+          "range": {
+            "min": 1
+          }
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "marqueeImage",
+      "name": "Marquee Image",
+      "type": "Link",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "footerCopy",
+      "name": "Mobile Footer Tile Copy",
+      "type": "Symbol",
+      "localized": true,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "nearMeMode",
+      "name": "Near Me Mode",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "unique": true
+        },
+        {
+          "in": [
+            "Is near mode"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false
+    }
+  ],
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "m3qyzuwrf176"
+      }
+    },
+    "id": "floor",
+    "type": "ContentType",
+    "createdAt": "2019-05-17T23:15:20.341Z",
+    "updatedAt": "2020-04-20T19:36:35.717Z",
+    "environment": {
+      "sys": {
+        "id": "app-development",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 51,
+    "publishedAt": "2020-04-20T19:36:35.717Z",
+    "firstPublishedAt": "2019-05-17T23:15:20.733Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "1oTUaOFGrRbUF7o4nROofD"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "5ak15p8KyUIxas7xI1Nu9s"
+      }
+    },
+    "publishedCounter": 26,
+    "version": 52,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "5ak15p8KyUIxas7xI1Nu9s"
+      }
+    }
+  }
+}
