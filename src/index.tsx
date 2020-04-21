@@ -25,9 +25,9 @@ interface AppProps {
 interface AppState {
   title: string;
   description?: string;
-  // position: number;
-  // marqueeImage: string;
-  // footerCopy?: string;
+  position: number;
+  marqueeImage: string;
+  footerCopy?: string;
   nearMeMode: boolean;
   findingNearbyTitle?: string;
   findingNearbyDescription?: string;
@@ -40,9 +40,9 @@ class App extends React.Component<AppProps, AppState> {
     this.state = {
       title: props.sdk.entry.fields.title.getValue(),
       description: props.sdk.entry.fields.description.getValue(),
-      // position: props.sdk.entry.fields.position.getValue(),
-      // marqueeImage: props.sdk.entry.fields.marqueeImage.getValue(),
-      // footerCopy: props.sdk.entry.fields.footerCopy.getValue(),
+      position: props.sdk.entry.fields.position.getValue(),
+      marqueeImage: props.sdk.entry.fields.marqueeImage.getValue(),
+      footerCopy: props.sdk.entry.fields.footerCopy.getValue(),
       nearMeMode: props.sdk.entry.fields.nearMeMode.getValue(),
       findingNearbyTitle: props.sdk.entry.fields.findingNearbyTitle.getValue(),
       findingNearbyDescription: props.sdk.entry.fields.findingNearbyDescription.getValue(),
@@ -61,6 +61,10 @@ class App extends React.Component<AppProps, AppState> {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     this.props.sdk.entry.fields.findingNearbyTitle.setValue(event.target.value);
+  };
+
+  onPositionChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.sdk.entry.fields.position.setValue(event.target.value);
   };
 
   onFindingNearbyDescriptionChangeHandler = (
@@ -84,9 +88,27 @@ class App extends React.Component<AppProps, AppState> {
       <div className="f36-margin--l">
         <Typography>
           <SectionHeading>Title</SectionHeading>
-          <TextInput onChange={this.onTitleChangeHandler} value={this.state.title} />
+          <TextInput
+            onChange={this.onTitleChangeHandler}
+            value={this.state.title}
+          />
           <SectionHeading>Body</SectionHeading>
-          <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} />
+          <TextInput
+            onChange={this.onDescriptionChangeHandler}
+            value={this.state.description}
+          />
+          <SectionHeading>Position</SectionHeading>
+          <TextField
+            onChange={this.onPositionChangeHandler}
+            value={this.state.position}
+          />
+          <SectionHeading>Marquee Image</SectionHeading>
+          <Asset src={this.state.marqueeImage} type="image" />
+          <SectionHeading>Footer Copy</SectionHeading>
+          <TextInput
+            onChange={this.onTitleChangeHandler}
+            value={this.state.footerCopy}
+          />
           <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
