@@ -12,11 +12,6 @@
     vertical-align: baseline;
   }
 
-  .test {
-    height: 600px;
-    width: 100%;
-  }
-  
   input,
   textarea {
     margin-bottom: 15px !important;

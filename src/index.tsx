@@ -19,7 +19,7 @@ import "@contentful/forma-36-fcss";
 import "./index.css";
 
 interface AppProps {
-  sdk: EditorExtensionSDK;
+  sdk: EditorExtensionSDK | any
 }
 
 interface AppState {
@@ -47,6 +47,10 @@ class App extends React.Component<AppProps, AppState> {
       findingNearbyTitle: props.sdk.entry.fields.findingNearbyTitle.getValue(),
       findingNearbyDescription: props.sdk.entry.fields.findingNearbyDescription.getValue(),
     };
+  }
+
+  componentDidMount(){
+    this.props.sdk.window.updateHeight()
   }
 
   // onTitleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,7 +89,7 @@ class App extends React.Component<AppProps, AppState> {
     // const floorTitleIncludesNear = this.state.title.toLowerCase().includes("near");
 
     return (
-      <div className="f36-margin--l test">
+      <div className="f36-margin--l">
         {/* <Typography>
           <SectionHeading>Title</SectionHeading>
           <TextInput
