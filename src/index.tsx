@@ -87,7 +87,7 @@ class App extends React.Component<AppProps, AppState> {
           <TextInput onChange={this.onTitleChangeHandler} value={this.state.title} />
           <SectionHeading>Body</SectionHeading>
           <Textarea onChange={this.onDescriptionChangeHandler} value={this.state.description} />
-          {/* <SectionHeading>Is Near Me Mode?</SectionHeading>
+          <SectionHeading>Is Near Me Mode?</SectionHeading>
           <FieldGroup row={false}>
             <RadioButtonField
               labelText="Yes"
@@ -105,7 +105,7 @@ class App extends React.Component<AppProps, AppState> {
               name="nearModeOption"
               id="noCheckbox"
             />
-          </FieldGroup>*/}
+          </FieldGroup>
         </Typography>
         {this.state.nearMode && (
           <Typography>

@@ -33,6 +33,10 @@ Next, push a development version to your space and create a build folder
 
 `npm run start`
 
+To create the final version make sure to run:
+
+`npm run build`
+
 Be sure to add the extension to Contentful, and make sure the fields match the content type json.
 
 `Settings -> Extensions -> Add Extension -> Install from Github` -> add a link to the extensions.json file
