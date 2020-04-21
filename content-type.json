@@ -24,16 +24,6 @@
       "omitted": false
     },
     {
-      "id": "footerCopy",
-      "name": "Mobile Footer Tile Copy",
-      "type": "Symbol",
-      "localized": true,
-      "required": false,
-      "validations": [],
-      "disabled": false,
-      "omitted": false
-    },
-    {
       "id": "nearMeMode",
       "name": "Is Near Mode",
       "type": "Boolean",
