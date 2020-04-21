@@ -11,6 +11,11 @@
     font: inherit;
     vertical-align: baseline;
   }
+
+  .near-me-container {
+    height: 600px;
+    width: 100%;
+  }
   
   input,
   textarea {
