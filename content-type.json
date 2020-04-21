@@ -40,17 +40,6 @@
       "omitted": false
     },
     {
-      "id": "marqueeImage",
-      "name": "Marquee Image",
-      "type": "Link",
-      "localized": false,
-      "required": true,
-      "validations": [],
-      "disabled": false,
-      "omitted": false,
-      "linkType": "Asset"
-    },
-    {
       "id": "footerCopy",
       "name": "Mobile Footer Tile Copy",
       "type": "Symbol",
